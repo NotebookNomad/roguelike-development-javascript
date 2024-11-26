@@ -10,31 +10,31 @@ const scene = {
     update: function () {
         if (this.cursors.left.isDown) {
 			this.helloText.x -=10;
-			if (this.helloText.x < 0) {
-				this.helloText.x = config.width
+			if (this.helloText.x < 0-config.width/4) {
+				this.helloText.x = config.width + config.width/4
 			}
 			
         }
 
         if (this.cursors.right.isDown) {
    			this.helloText.x += 10;
-			if (this.helloText.x > config.width) {
-				this.helloText.x = 0
+			if (this.helloText.x > config.width+config.width/4) {
+				this.helloText.x = 0 - config.width/4
 			}
 	
         }
 
         if (this.cursors.up.isDown) {
             this.helloText.y -= 10;
-			if (this.helloText.y < 0) {
-				this.helloText.y = config.height
+			if (this.helloText.y < 0-config.height/4) {
+				this.helloText.y = config.height + config.height/4
 			}
         }
 
         if (this.cursors.down.isDown) {
             this.helloText.y += 10;
-			if (this.helloText.y > config.height) {
-				this.helloText.y = 0
+			if (this.helloText.y > config.height+config.height/4) {
+				this.helloText.y = 0 - config.height/4
 			}
         }
     }
