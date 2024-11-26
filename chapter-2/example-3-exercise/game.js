@@ -9,23 +9,33 @@ const scene = {
     },
     update: function () {
         if (this.cursors.left.isDown) {
-			if (this.helloText.x < 0) {
-				this.helloText.x = 800
-			}
 			this.helloText.x -=10;
+			if (this.helloText.x < 0) {
+				this.helloText.x = config.width
+			}
+			
         }
 
         if (this.cursors.right.isDown) {
-            this.helloText.x += 10;
+   			this.helloText.x += 10;
+			if (this.helloText.x > config.width) {
+				this.helloText.x = 0
+			}
+	
         }
 
         if (this.cursors.up.isDown) {
             this.helloText.y -= 10;
-
+			if (this.helloText.y < 0) {
+				this.helloText.y = config.height
+			}
         }
 
         if (this.cursors.down.isDown) {
             this.helloText.y += 10;
+			if (this.helloText.y > config.height) {
+				this.helloText.y = 0
+			}
         }
     }
 }
